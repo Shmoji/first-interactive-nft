@@ -1,0 +1,180 @@
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Tut: https://dev.to/afif/a-multi-line-css-only-typewriter-effect-3op3 */
+.typed-out {
+  font-family: monospace;
+  color:#0000;
+  background:
+    linear-gradient(-90deg,#00DFFC 0,#0000 0) 10px 0,
+    linear-gradient(#00DFFC 0 0) 0 0;
+  background-size: calc(var(--n) * 1ch) 200%;
+  -webkit-background-clip: padding-box, text;
+  border-bottom: purple;
+  background-clip: padding-box, text;
+  background-repeat: no-repeat;
+  animation: 
+    /* Speed it is typed at is controlled by .02s */
+    t calc(var(--n) * .02s) steps(var(--n)) forwards;
+}
+@keyframes t {
+  from { background-size: 0 200% }
+}
+@keyframes b {
+  50% { background-position: 0 -100%, 0 0 }
+}
+
+.typed-out-done {
+  font-family: monospace;
+  color:#0000;
+  background:
+    linear-gradient(-90deg,#00DFFC 5px,#0000 0) 10px 0,
+    linear-gradient(#00DFFC 0 0) 0 0;
+  background-size: calc(var(--n) * 1ch) 200%;
+  -webkit-background-clip: padding-box, text;
+  border-bottom: purple;
+  background-clip: padding-box, text;
+  background-repeat: no-repeat;
+}
+
+/* screen height below 300px gets xxsmall font */
+@media screen and (max-height: 300px) {
+  .story-text, .story-title {
+    font-size: xx-small;
+  }
+}
+
+/* screen height between 301-440px gets xsmall font */
+@media screen and (min-height: 301px) and (max-height: 440px) {
+  .story-text, .story-title {
+    font-size: x-small;
+  }
+}
+
+/* screen height above 600px gets large font OR screen width above 600px gets large font - but as soong as width or height goes under 600px, you lose large font */
+@media screen and (min-height: 600px) and (min-width: 600px) {
+  .story-text, .story-title {
+    font-size:large;
+  }
+}
+
+/* screen height of 800px and more get large font bc then width size doesnt even matter anymore - it will work at smallest width */
+@media screen and (min-height: 800px) {
+  .story-text, .story-title {
+    font-size: large;
+  }
+}
+
+/* screen height of 730px or less makes device height 90% */
+@media screen and (max-height: 730px) {
+  .story-device {
+    height: 90%;
+  }
+}
+
+/* screen width of 730px or less makes device width 90% */
+@media screen and (max-width: 730px) {
+  .story-device {
+    width: 90%;
+  }
+}
+
+/* screen width of 1280px or more makes device width 500px */
+@media screen and (min-width: 1280px) {
+  .story-device {
+    width: 600px;
+  }
+}
+
+/* screen height of 1280px or more makes device height 500px */
+@media screen and (min-height: 1280px) {
+  .story-device {
+    height: 600px;
+  }
+}
+
+/* screen height below 300px gets xxsmall font */
+@media screen and (max-height: 300px) {
+  .button-text {
+    font-size: xx-small;
+  }
+}
+
+/* screen height between 301-440px gets xsmall font */
+@media screen and (min-height: 301px) and (max-height: 440px) {
+  .button-text {
+    font-size: x-small;
+  }
+}
+
+@media screen and (min-height: 441px) and (max-height: 799px) {
+  .button-text {
+    font-size: small;
+  }
+}
+
+@media screen and (min-height: 800px) {
+  .button-text {
+    font-size: medium;
+  }
+}
+
+/* Toggle Switch styles */
+.toggle-switch {
+  position: relative;
+  display: inline-block;
+  width: 22px;
+  height: 12px;
+}
+.toggle-switch input[type="checkbox"] {
+  display: none;
+}
+.toggle-switch .switch {
+  position: absolute;
+  cursor: pointer;
+  background-color: #E5E7EB;
+  border-radius: 20px;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  transition: background-color 0.2s ease;
+}
+.toggle-switch .switch::before {
+  position: absolute;
+  content: "";
+  left: 0px;
+  top: 0px;
+  width: 12px;
+  height: 12px;
+  background-color: white;
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+  border: 1px solid black;
+}
+.toggle-switch input[type="checkbox"]:checked + .switch::before {
+  transform: translateX(13px);
+  background-color: white;
+}
+.toggle-switch input[type="checkbox"]:checked + .switch {
+  background-color: rgb(8, 87, 224);
+}
+
+.hyperlink:hover {
+  text-decoration: underline;
+}
+
